@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Togel Asik</title>
+</head>
+<body>
+    <section id="acak" onmousemove="acak1()">
+        <div class="hasil" onmousemove="hasil1()">Hasil</div>
+        <span id="pet">Arahkan Cursor atau Tekan Pada Bagian Hasil</span>
+    </section>
+    <main>
+        <button id="genap" onclick="Gen()"><5</button>
+        <span id="sd">0</span>
+        <button id="ganjil" onclick="Gan()">>=5</button>
+    </main>
+    <footer id="hadiah"></footer>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins',sans-serif;
+        }
+        body{
+            display: flex;
+            flex-direction: column;
+        }
+        section{
+            position: relative;
+            min-width: 100vh;
+            padding: 10px;
+            height: 250px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(166, 255, 0);
+        }
+        #pet {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+        }
+        main{
+            width: 400px;
+            margin-top: 10px;
+            display: flex;
+            align-self: center;
+            justify-content: space-between;
+        }
+        button{cursor: pointer;}
+        #ganjil , #genap,#sd{padding: 10px 0;width:100px;outline: none;
+        border: none; color: white; font-size: 20px;}
+        #ganjil{background-color: green;}
+        #genap{background-color: red;}
+        #sd{background-color: blue;text-align: center;}
+        .hasil{
+            background-color: red;
+            padding: 20px;
+            border-radius: 50%;
+        }
+        footer{
+            position: absolute;
+            background-image: url(http://3.bp.blogspot.com/-gAVWivcn92s/UpTKZF_vfmI/AAAAAAAABGE/tCAqXA0XWEs/s1600/jumpscare.jpg);
+            top: 0;
+            left: 0;
+            right: 0;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            z-index: -1;
+            bottom: 0;
+        }
+    </style>
+
+    <script>
+    let hasil = document.getElementById('sd')
+    let genap = document.getElementById('genap')
+    let ganjil = document.getElementById('ganjil')
+    let penentuan;
+    let setGen = false;
+    let setGan = false;
+    let hadiah = document.getElementById('hadiah')
+    
+
+    function Gan(){
+        setGan = true;
+        setGen = false;
+    }
+    function Gen(){
+        setGen = true;
+        setGan = false;
+
+    }
+
+    function acak1(){
+        if(!(setGan == true || setGen == true)){
+        }else{
+            penentuan = Math.floor(Math.random()*10)
+            hasil.innerHTML = penentuan
+        }
+    }
+
+    function hasil1(){
+        if(penentuan < 5){
+            if(setGan == false){
+                alert('Kamu Menang')
+                hadiah.style.opacity = 1;
+                hadiah.style.zIndex = 1
+                hasil.innerHTML = "0"
+            }else{
+                alert('a')
+                hadiah.style.opacity = 1;
+                hasil.innerHTML = "0"
+            }
+        }else{
+            if(penentuan >= 5){
+                alert('Kamu Menang')
+                hasil.innerHTML = "0"
+            }else{
+                alert('a')
+                hasil.innerHTML = "0"
+                hadiah.style.opacity = 1;
+                hadiah.style.zIndex = 1
+            }
+        }
+        setGan = false
+        setGen = false
+    }
+    </script>
+</body>
+</html>
