@@ -25,6 +25,7 @@ ul{
 li a , li{
     list-style: none;
     padding: 10px 15px;
+    transition: color .3s;
     text-decoration: none;
 }
 main{
@@ -115,6 +116,9 @@ main{
     outline: none;
     padding: 3px 10px;
     border-radius: 5px;
+}
+li a:hover{
+    color: rgb(0, 0, 0);
 }
 @keyframes naik{
     0%{
@@ -224,15 +228,47 @@ main{
         max-width: 70px;
         font-size: 18px;
         height: 70px;
+    }
 }
 @media screen and (max-width: 450px){
+    li a{padding: 0;}
+    .time{
+        width: 100vw;
+    }
+    .jam,.menit,.detik{
+        max-width: 110px;
+        height: 100px;
+    }
+    #jam1,#jam2,#menit1,#menit2,#detik1,#detik2{
+        max-width: 50px;
+        font-size: 18px;
+        height: 50px;
+    }
     section{
         width: 100vw;
         overflow-x: hidden;
+        padding: 20px 0;
     }
     nav, ul{
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: space-between;
+    }
+    ul li{
+        padding: 0;
+        position: relative;
+    }
+    ul li:last-child{
+        top: -10px;
+    }
+    ul{margin-top: -5px;}
+    main{
+        min-height: 45vh;
+    }
+}
+@media screen and (max-height: 600px){
+    main{
+        min-height: 50vh;
     }
 }
