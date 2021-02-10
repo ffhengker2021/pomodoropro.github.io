@@ -226,13 +226,13 @@ main{
         height: 70px;
 }
 @media screen and (max-width: 450px){
-    .time{max-width: 100vw;}
-    .jam,.menit,.detik{
-        max-width: 110px;
-        height: 100px;
+    section{
+        width: 100vw;
+        overflow-x: hidden;
     }
-    #jam1,#jam2,#menit1,#menit2,#detik1,#detik2{
-        max-width: 50px;
-        font-size: 18px;
-        height: 50px;
+    nav, ul{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 }
