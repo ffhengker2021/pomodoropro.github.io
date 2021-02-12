@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="gaya.css">
+    <title>Pomodoropro | Time</title>
+</head>
+<body>
+    <section>
+    <nav>
+        <span id="home">Home</span>
+        <ul>
+            <li><a href="#">Timer</a></li>
+            <li><a href="#">Pomodoro</a></li>
+        </ul>
+    </nav>
+    <main id="container">
+        <div class="container" id="awe">
+            <div class="time">
+                <div class="jam">
+                    <span id="jam1">0</span>
+                    <span id="jam2">0</span>
+                </div>
+                <div class="menit">
+                    <span id="menit1">0</span>
+                    <span id="menit2">0</span>
+                </div>
+                <div class="detik">
+                    <span id="detik1">0</span>
+                    <span id="detik2">0</span>
+                </div>
+            </div>
+            <div class="tombol">
+                <button id="mulai" onclick="start()">Start</button>
+                <button id="edit" onclick="edit()">Edit</button>
+                <button id="reset" onclick="reset()">Reset</button>
+            </div>
+        </div>
+    </main>
+    <aside id="editor" style="position: relative">
+        <div class="tabel">
+            <span class="judul">Jam</span>
+            <input type="text" id="InputJam" oninput="masukan()">
+        </div>
+        <div class="tabel">
+            <span class="judul">Menit</span>
+            <input type="text" id="InputMenit" oninput="masukan()">
+        </div>
+        <div class="tabel">
+            <span class="judul">Detik</span>
+            <input type="text" id="InputDetik" oninput="masukan()">
+        </div>
+    </aside>
+    </section>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
