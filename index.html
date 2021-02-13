@@ -1,317 +1,174 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins',sans-serif;
-}
-section{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-image: linear-gradient(140deg, #FF1F98,#9E00FF);
-    padding: 20px;
-}
-nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-#home, ul li a{color: #fff;font-size: 22px;}
-ul{
-    display: flex;
-}
-li a , li{
-    list-style: none;
-    padding: 10px 15px;
-    transition: color .3s;
-    text-decoration: none;
-}
-main{
-    min-height: 65vh;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.container{
-    position: relative;
-    top: 50px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    max-width: 700px;
-}
-.time{
-    width: 700px;
-    height: 120px;
-    align-items: center;
-    padding: 15px 0;
-    display: flex;
-    justify-content: space-around;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="gaya.css">
+    <link rel="shortcut icon" href="Untitled design(1).png">
+    <title>Pomodoropro | Time</title>
+</head>
+<body>
+    <section>
+    <nav>
+        <span id="home">Home</span>
+        <ul>
+            <li><a href="/Timer.html">Timer</a></li>
+            <li><a href="#">Pomodoro</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container">
+            <div class="time">
+                <div class="jam">
+                    <span id="jam1">0</span>
+                    <span id="jam2">0</span>
+                </div>
+                <div class="menit">
+                    <span id="menit1">0</span>
+                    <span id="menit2">0</span>
+                </div>
+                <div class="detik">
+                    <span id="detik1">0</span>
+                    <span id="detik2">0</span>
+                </div>
+            </div>
+        </div>
+    </main>
+    <aside id="editor">
+        <div class="tabel">
+            <span class="judul">Jam</span>
+            <input type="text" id="InputJam" value="0">
+        </div>
+        <div class="tabel">
+            <span class="judul">Menit</span>
+            <input type="text" id="InputMenit" value="2">
+        </div>
+        <div class="tabel">
+            <span class="judul">Detik</span>
+            <input type="text" id="InputDetik" value="0">
+        </div>
+    </aside>
+    </section>
 
-.jam,.menit,.detik{
-    width: 210px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-}
-#jam1,#jam2,#menit1,#menit2,#detik1,#detik2{
-    width: 100px;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    background-color: rgba(128, 0, 128, 0.541);
-    font-size: 42px;
-    color: white;
-    font-family: 'awe',sans-serif;
-    transition: .4s;
-}
-.tombol{
-    display: flex;
-    width: 600px;
-    position: relative;
-    top: 30px;
-    justify-content: space-evenly;
-    align-self: center;
-}
-#mulai,#edit,#reset{
-    width: 150px;
-    height: 50px;
-    box-shadow: 0 8px #002affb6;
-    border: none;
-    font-size: 22px;
-    border-radius: 10px;
-    cursor: pointer;
-    outline: none;
-    transition: .2s;
-}
-#mulai:active,#edit:active,#reset:active{
-    position: relative;
-    top: 8px;
-    transition: none;
-    box-shadow: none
-}
-#editor{
-    background-color: rgb(233, 233, 233);
-    align-self: center;
-    padding: 20px;
-    position: relative;
-    bottom: 10px;
-    display: block;
-    height: 1vh;
-    opacity: 0;
-    border-radius: 10px;
-}
-.tabel{
-    display: flex;
-    flex-direction: column;
-}
-.judul{ font-size: 18px; }
-.tabel input{
-    border: none;
-    outline: none;
-    padding: 3px 10px;
-    border-radius: 5px;
-}
-li a:hover{
-    color: rgb(0, 0, 0);
-}
-@keyframes naik{
-    0%{
-        min-height: 65vh;
-    }
-    100%{
-        min-height: 55vh;
-    }
-}
+    <script>
+        let Detik = new Date();
+        let Menit = new  Date();
+        let Jam = new Date();
+        
+        let awoke = false
+        
+        let jam1 = document.getElementById('jam1')
+        let jam2 = document.getElementById('jam2')
+        let menit1 = document.getElementById('menit1')
+        let menit2 = document.getElementById('menit2')
+        let detik1 = document.getElementById('detik1')
+        let detik2 = document.getElementById('detik2')
+        let editor = document.getElementById('editor')
 
-@keyframes muncul{
-    0%{
-        display: none;
-    }
-    100%{
-        display: block;
-        height: 30vh;
-        opacity: 1;
-    }
-}
+        let timerD = document.getElementById('InputDetik').value
+        let timerM = document.getElementById('InputMenit').value
+        let timerJ = document.getElementById('InputJam').value
+        
+        Detik.setSeconds(timerD)
+        Menit.setMinutes(timerM)
+        Jam.setHours(timerJ)
 
-@keyframes naik2{
-    0%{
-        min-height: 55vh;
-    }
-    100%{
-        min-height: 65vh;
-    }
-}
-@keyframes tope {
-    100%{
-        top: -10px;
-    }
-}
-@keyframes tope2 {
-    100%{
-        top: 50px;
-    }
-}
-@media screen and (max-width: 700px){
-    .container{
-        min-width: 100vw;
-        padding:  0;
-    }
-    section{
-        padding: 20px 0 ;
-    }
-    .time{
-        max-width: 690px;
-        height: 120px;
-        padding: 15px 0;
-    }
-    nav{padding: 0 0px 0 20px;}
-    .jam,.menit,.detik{
-        max-width: 210px;
-        height: 100px;
-    }
-    #jam1,#jam2,#menit1,#menit2,#detik1,#detik2{
-        max-width: 100px;
-        font-size: 38px;
-        height: 100px;
-    }
-}
-@media screen and (max-width: 690px){
-    .container{
-        min-width: 100vw;
-        padding:  0;
-    }
-    section{
-        padding: 20px 0 ;
-    }
-    .time{
-        max-width: 100vw;
-        height: 120px;
-        padding: 15px 0;
-    }
-    nav{padding: 0 0px 0 20px;}
-    .jam,.menit,.detik{
-        max-width: 180px;
-        height: 100px;
-    }
-    #jam1,#jam2,#menit1,#menit2,#detik1,#detik2{
-        max-width: 80px;
-        font-size: 38px;
-        height: 80px;
-    }
-    .tombol{
-        width: 500px;
-    }
-    #mulai,#edit,#reset{
-        width: 140px;
-        height: 50px;
-    }
-}
-@media screen and (max-width: 570px){
-    .container{
-        max-width: 100vw;
-        padding:  0;
-    }
-    section{
-        padding: 20px 0 ;
-    }
-    .time{
-        max-width: 100vw;
-        height: 120px;
-        padding: 15px 0;
-    }
-    nav{padding: 0 0px 0 20px;}
-    .jam,.menit,.detik{
-        max-width: 150px;
-        height: 100px;
-    }
-    #jam1,#jam2,#menit1,#menit2,#detik1,#detik2{
-        max-width: 70px;
-        font-size: 28px;
-        height: 70px;
-    }
-    .tombol{
-        width: 500px;
-    }
-    #mulai,#edit,#reset{
-        width: 120px;
-        height: 40px;
-    }
-}
-@media screen and (max-width: 450px){
-    li a{padding: 0;}
-    .time{
-        width: 100vw;
-    }
-    .jam,.menit,.detik{
-        max-width: 110px;
-        height: 100px;
-    }
-    #jam1,#jam2,#menit1,#menit2,#detik1,#detik2{
-        max-width: 50px;
-        font-size: 24px;
-        height: 50px;
-    }
-    section{
-        width: 100vw;
-        overflow-x: hidden;
-        padding: 20px 0;
-    }
-    nav, ul{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
-    ul li{
-        padding: 0;
-        position: relative;
-    }
-    ul li:last-child{
-        top: -10px;
-    }
-    ul{margin-top: -5px;}
-    main{
-        min-height: 45vh;
-    }
-    .tombol{
-        max-width: 350px;
-        top: 0;
-    }
-    #mulai,#edit,#reset{
-        width: 90px;
-        height: 35px;
-        font-size: 18px;
-        box-shadow: 0 7px #002affb6;
-    }
-    @keyframes naik{
-        0%{
-            min-height: 45vh;
+        let mulai = document.getElementById('mulai')
+        let edit = document.getElementById('edit')
+        let reset = document.getElementById('reset')
+
+        let maju = setInterval(detik , 1000);
+        // Mereset
+        function resetJam(){
+            awoke = true;
         }
-        100%{
-            min-height: 35vh;
+
+        // Mengedit
+        function editJam(){
+            editor.style.display = "block"
         }
-    }
-    @keyframes naik2{
-        100%{
-            min-height: 45vh;
+
+        function detik(){
+        Detik = new Date();
+        Menit = new  Date();
+        Jam = new Date();
+        // Detik.setSeconds(10)
+        if(awoke == true){
+            Detik.setSeconds()
+            Menit.setMinutes()
+            Jam.setHours()
+            clearInterval(maju)
         }
-    }
-}
-@media screen and (max-height: 600px){
-    main{
-        min-height: 50vh;
-    }
-}
-@font-face{
-    font-family: 'awe';
-    src: url('DS-DIGIT.TTF');
-}
+        // Detik
+        if(Detik.getSeconds() == 0){
+            detik1.innerHTML = Detik.getSeconds()
+            detik2.innerHTML = Detik.getSeconds()
+        }else if(Detik.getSeconds() <= 9 ){
+            detik2.innerHTML = Detik.getSeconds()
+        }else if(Detik.getSeconds() <= 19){
+            detik1.innerHTML = "1"
+            detik2.innerHTML = Detik.getSeconds()-10
+        }else if(Detik.getSeconds() <= 29){
+            detik1.innerHTML = "2"
+            detik2.innerHTML = Detik.getSeconds()-20
+        }else if(Detik.getSeconds() <= 39){
+            detik1.innerHTML = "3"
+            detik2.innerHTML = Detik.getSeconds()-30
+        }else if(Detik.getSeconds() <= 49){
+            detik1.innerHTML = "4"
+            detik2.innerHTML = Detik.getSeconds()-40
+        }else if(Detik.getSeconds() <= 59){
+            detik1.innerHTML = "5"
+            detik2.innerHTML = Detik.getSeconds()-50
+        }else{
+            detik1.innerHTML = "0";detik2.innerHTML = "0"
+        }
+
+        // Menit
+        if(Menit.getMinutes() == 0){
+            menit1.innerHTML = Menit.getMinutes()
+            menit2.innerHTML = Menit.getMinutes()
+        }else if(Menit.getMinutes() <= 9 ){
+            menit2.innerHTML = Menit.getMinutes()
+        }else if(Menit.getMinutes() <= 19){
+            menit1.innerHTML = "1"
+            menit2.innerHTML = Menit.getMinutes()-10
+        }else if(Menit.getMinutes() <= 29){
+            menit1.innerHTML = "2"
+            menit2.innerHTML = Menit.getMinutes()-20
+        }else if(Menit.getMinutes() <= 39){
+            menit1.innerHTML = "3"
+            menit2.innerHTML = Menit.getMinutes()-30
+        }else if(Menit.getMinutes() <= 49){
+            menit1.innerHTML = "4"
+            menit2.innerHTML = Menit.getMinutes()-40
+        }else if(Menit.getMinutes() <= 59){
+            menit1.innerHTML = "5"
+            menit2.innerHTML = Menit.getMinutes()-50
+        }else{
+            menit1.innerHTML = "0";menit.innerHTML = "0"
+        }
+
+        // Jam
+        if(Jam.getHours() == 0){
+            jam1.innerHTML = Jam.getHours()
+            jam2.innerHTML = Jam.getHours()
+        }else if(Jam.getHours() <= 9 ){
+            jam2.innerHTML = "0"
+            jam2.innerHTML = Jam.getHours()
+        }else if(Jam.getHours() <= 19){
+            jam1.innerHTML = "1"
+            jam2.innerHTML = Jam.getHours()-10
+        }else if(Jam.getHours() <= 24){
+            jam1.innerHTML = "2"
+            jam2.innerHTML = Jam.getHours()-20
+        }else{
+            jam1.innerHTML = "0";jam.innerHTML = "0"
+        }
+        
+        }
+
+    </script>
+
+</body>
+</html>
