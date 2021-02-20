@@ -1,4 +1,4 @@
-### Hi there 👋
+### BARANG SIAPA YANG NYOLONG TERUS GAK NGASIH WM DAN NGAKU PUNYA DIA, PERCAYALAH SAYA IKHLAS SAJA SEMOGA BERKAH
 
 <!--
 **pomodoropro/pomodoropro** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
