@@ -1,0 +1,44 @@
+.iklans{
+    width: 90%;
+    align-self: center;
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+main{
+    min-height: 50vh;
+}
+.papan{
+    width: 25%;
+    position: relative;
+    height: 200px;
+    padding: 3px 15px;
+    background-image: linear-gradient(140deg,rgba(255, 255, 255, 0.568),rgba(255, 255, 255, 0.3));
+    border-radius: 10px;
+}
+.lingkaran{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: blur(5px);
+    opacity: .8;
+    z-index: 0;
+    border-radius: 100%;
+}
+.first{background: linear-gradient(140deg,#FF0000,#E700DD);}
+.sec{background: linear-gradient(140deg,#0029FF,#C600E7);}
+.thre{background: linear-gradient(140deg,#FFD600,#E700C2);}
+.kalimat{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.kalimat h2{
+    font-size: 28px;
+    font-weight: normal;
+}
+.kalimat h2 , .kalimat p{z-index: 2;text-align: center;}
+.kalimat p{margin-top: 10px;font-size: 17px;}
