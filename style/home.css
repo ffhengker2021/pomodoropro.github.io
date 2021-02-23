@@ -1,7 +1,7 @@
 .iklans{
     width: 90%;
     align-self: center;
-    height: 35vh;
+    min-height: 35vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,6 +12,7 @@ main{
 .papan{
     width: 25%;
     position: relative;
+    display: flex;
     height: 200px;
     padding: 3px 15px;
     background-image: linear-gradient(140deg,rgba(255, 255, 255, 0.568),rgba(255, 255, 255, 0.3));
@@ -31,14 +32,38 @@ main{
 .first{background: linear-gradient(140deg,#FF0000,#E700DD);}
 .sec{background: linear-gradient(140deg,#0029FF,#C600E7);}
 .thre{background: linear-gradient(140deg,#FFD600,#E700C2);}
-.kalimat{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 .kalimat h2{
     font-size: 28px;
-    font-weight: normal;
+    position: relative;
+    margin-top: 10px;
+    font-weight: normal;height:30%;
+}
+.kalimat{
+    z-index: 3;
 }
 .kalimat h2 , .kalimat p{z-index: 2;text-align: center;}
-.kalimat p{margin-top: 10px;font-size: 17px;}
+.kalimat p{font-size: 17px;}
+@media screen and (max-width:980px){
+    .iklans{
+        flex-wrap: wrap;
+    }
+    .papan{
+        width: 45%;
+    }
+    .iklans:nth-child(3){
+        justify-content: space-evenly;
+    }
+    .papan:nth-child(3){
+        margin-top: 20px;
+    }
+}
+@media screen and (max-width:562px){
+    .iklans{
+        flex-direction: column;
+    }
+    .papan:nth-child(1){margin-top: 0;}
+    .papan{
+        width: 100%;
+        margin-top: 20px;
+    }
+}
