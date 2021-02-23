@@ -329,7 +329,12 @@ function timer(){
                 timerD = 59;
             }
         }else{
-            timerD--;
+            if(timerJ == 0 && timerM == 0 &timerD == 0){
+                alarm();
+                clearInterval(maju)
+            }else{
+                timerD--
+            }
         }
     }else{
         if(timerM > 0){
@@ -344,9 +349,6 @@ function timer(){
             timerD = 59;
             timerM = 59;
         }
-    }
-    function awe(){
-        clearInterval(maju);
     }
     // Angka Jam
     if(timerD == 0){
@@ -420,4 +422,19 @@ function timer(){
     }else{
         jam1.innerHTML = "0";jam2.innerHTML = "0";
     }
+timerJ = document.getElementById('InputJam').value = timerJ;
+timerM = document.getElementById('InputMenit').value = timerM;
+timerD = document.getElementById('InputDetik').value = timerD;
 }
+
+// besok
+// function alarm(){
+//     setInterval(oka,1000);
+//     function oka(){
+//     let mp3 = `<source src="../file/Google_Event-1.mp3" type="audio/mpeg">`;
+//     document.getElementById('suara').innerHTML = 
+//     `<audio autoplay="autoplay"> ${mp3} </audio>`
+//     }
+//     oka();
+//     alert('a')
+// }
