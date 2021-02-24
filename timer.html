@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style/gaya.css">
-    <link rel="shortcut icon" href="/img/Untitled design(1).png">
     <title>Pomodoropro | Time</title>
 </head>
 <body>
     <section id="utama">
     <nav>
-        <span id="home">Home</span>
+        <a href="/index.html" id="home"><span>Home</span></a>
         <ul>
-            <li><a href="#">Timer</a></li>
-            <li><a href="#">Pomodoro</a></li>
+            <li><a href="/timer.html">Timer</a></li>
+            <li><a href="/pomodoro.html">Pomodoro</a></li>
         </ul>
     </nav>
     <main id="container">
@@ -38,6 +37,7 @@
                 <button id="reset" onclick="reset()">Reset</button>
             </div>
         </div>
+        <div id="suara"></div>
     </main>
     <aside id="editor" style="position: relative">
         <div class="tabel">
@@ -54,9 +54,9 @@
         </div>
     </aside>
     </section>
+    <section class="kedua"></section>
 
     <script src="/script/script.js"></script>
-
 
 </body>
 </html>
