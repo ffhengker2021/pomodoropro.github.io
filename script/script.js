@@ -78,7 +78,7 @@ if(timerM == 0){
     menit1.innerHTML = "5";
     menit2.innerHTML = timerM-50;
 }else{
-    menit1.innerHTML = "0";menit2.innerHTML = "0";
+    menit1.innerHTML = "0";menit.innerHTML = "0";
 }
 // Jam
 if(timerJ == 0){
@@ -94,7 +94,7 @@ if(timerJ == 0){
     jam1.innerHTML = "2";
     jam2.innerHTML = timerJ-20;
 }else{
-    jam1.innerHTML = "0";jam2.innerHTML = "0";
+    jam1.innerHTML = "0";jam.innerHTML = "0";
 }
 
 // Bagian Tombol
@@ -160,6 +160,15 @@ function masukan(){
     timerM = document.getElementById('InputMenit').value;
     timerD = document.getElementById('InputDetik').value;
 
+    if(timerJ == ""){
+        timerJ = document.getElementById('InputJam').value = 0;
+    }
+    if(timerM == ""){
+        timerM = document.getElementById('InputMenit').value = 0;
+    }
+    if(timerD == ""){
+        timerD = document.getElementById('InputDetik').value = 0;
+    }
     timerD = parseInt(timerD);
     timerM = parseInt(timerM);
     timerJ = parseInt(timerJ);
@@ -294,7 +303,7 @@ function reset(){
             menit1.innerHTML = "5";
             menit2.innerHTML = timerM-50;
         }else{
-            menit1.innerHTML = "0";menit2.innerHTML = "0";
+            menit1.innerHTML = "0";timerM.innerHTML = "0";
         }
         // Jam
         if(timerJ == 0){
@@ -310,7 +319,7 @@ function reset(){
             jam1.innerHTML = "2";
             jam2.innerHTML = timerJ-20;
         }else{
-            jam1.innerHTML = "0";jam2.innerHTML = "0";
+            jam1.innerHTML = "0";jam.innerHTML = "0";
         }
         sop = true;
         clearInterval(maju);
@@ -329,12 +338,10 @@ function timer(){
                 timerD = 59;
             }
         }else{
-            if(timerJ == 0 && timerM == 0 &timerD == 0){
-                alarm();
+            if((timerJ == 0 || timerJ == "") && (timerM == 0 || timerM == "") && (timerD == 0 || timerD == "")){
                 clearInterval(maju)
-            }else{
-                timerD--
             }
+            timerD--;
         }
     }else{
         if(timerM > 0){
@@ -350,6 +357,7 @@ function timer(){
             timerM = 59;
         }
     }
+
     // Angka Jam
     if(timerD == 0){
         detik1.innerHTML = timerD;
@@ -357,6 +365,7 @@ function timer(){
         if(timerD == 0 && timerM == 0 && timerJ == 0){
             tombolStart.innerHTML = `Start`;
             sop = true;
+            clearInterval(maju);
         }
     }else if(timerD <= 9 ){
         detik1.innerHTML = "0";
@@ -403,7 +412,7 @@ function timer(){
         menit1.innerHTML = "5";
         menit2.innerHTML = timerM-50;
     }else{
-        menit1.innerHTML = "0";menit2.innerHTML = "0";
+        menit1.innerHTML = "0";timerM.innerHTML = "0";
     }
 
     // Jam
@@ -420,21 +429,6 @@ function timer(){
         jam1.innerHTML = "2";
         jam2.innerHTML = timerJ-20;
     }else{
-        jam1.innerHTML = "0";jam2.innerHTML = "0";
+        jam1.innerHTML = "0";timerJ.innerHTML = "0";
     }
-timerJ = document.getElementById('InputJam').value = timerJ;
-timerM = document.getElementById('InputMenit').value = timerM;
-timerD = document.getElementById('InputDetik').value = timerD;
 }
-
-// besok
-// function alarm(){
-//     setInterval(oka,1000);
-//     function oka(){
-//     let mp3 = `<source src="../file/Google_Event-1.mp3" type="audio/mpeg">`;
-//     document.getElementById('suara').innerHTML = 
-//     `<audio autoplay="autoplay"> ${mp3} </audio>`
-//     }
-//     oka();
-//     alert('a')
-// }
