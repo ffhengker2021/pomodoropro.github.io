@@ -365,6 +365,7 @@ function timer(){
         if(timerD == 0 && timerM == 0 && timerJ == 0){
             tombolStart.innerHTML = `Start`;
             sop = true;
+            alarm()
             clearInterval(maju);
         }
     }else if(timerD <= 9 ){
@@ -430,5 +431,17 @@ function timer(){
         jam2.innerHTML = timerJ-20;
     }else{
         jam1.innerHTML = "0";timerJ.innerHTML = "0";
+    }
+    document.getElementById('InputJam').value = timerJ;
+    document.getElementById('InputMenit').value = timerM;
+    document.getElementById('InputDetik').value = timerD;
+}
+function alarm(){
+    let suara = `<source src="../file/Google_Event-1.mp3"`
+    document.getElementById('music').innerHTML = `<audio autoplay="autoplay" loop> ${suara} </audio>`
+
+    let con = confirm('Time Is OVer');
+    if(con == true){
+        document.getElementById('music').innerHTML = ``
     }
 }
