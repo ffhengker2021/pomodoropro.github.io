@@ -336,6 +336,11 @@ li a:hover{
          background-color: blue;
      }
  }
+ @media screen and (max-height: 590px){
+    #editor{
+         overflow: scroll;
+     }
+ }
 @font-face{
     font-family: 'awe';
     src: url('../file/DS-DIGIT.TTF');
