@@ -338,7 +338,7 @@ function timer(){
                 timerD = 59;
             }
         }else{
-            if((timerJ == 0 || timerJ == "") && (timerM == 0 || timerM == "") && (timerD == 0 || timerD == "")){
+            if(timerJ == 0  && timerM == 0 && timerD == 0 ){
                 clearInterval(maju)
             }
             timerD--;
