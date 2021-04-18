@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    position: relative;
+}
 *{
     margin: 0;
     padding: 0;
@@ -10,13 +13,18 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: linear-gradient(140deg, #FF1F98,#9E00FF);
+    background-image: linear-gradient(140deg, #6CDCFF,#CC00FF);
     padding: 20px;
 }
 nav{
+    width: 100%;
     display: flex;
+    /* background-color: red; */
     justify-content: space-between;
     align-items: center;
+}
+#home{
+    padding: 10px 15px;
 }
 #home, ul li a{color: #fff;font-size: 22px; text-decoration: none;}
 ul{
@@ -137,6 +145,8 @@ li a:hover{
     100%{
         display: block;
         height: 30vh;
+        position: relative;
+        bottom: 50px;
         opacity: 1;
     }
 }
@@ -344,4 +354,14 @@ li a:hover{
 @font-face{
     font-family: 'awe';
     src: url('../file/DS-DIGIT.TTF');
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    padding: 15px 0;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+    width: 100%;
+    background: linear-gradient(140deg,rgba(255,255,255,.3),rgba(255,255,255,.35));
 }

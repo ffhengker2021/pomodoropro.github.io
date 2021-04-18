@@ -1,13 +1,13 @@
 .iklans{
     width: 90%;
     align-self: center;
-    min-height: 35vh;
+    min-height: 40vh;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 main{
-    min-height: 50vh;
+    min-height: 40vh;
 }
 .papan{
     width: 25%;
@@ -42,9 +42,10 @@ main{
     z-index: 3;
 }
 .kalimat h2 , .kalimat p{z-index: 2;text-align: center;}
-.kalimat p{font-size: 17px;}
+.kalimat p{font-size: 19px;}
 @media screen and (max-width:980px){
     .iklans{
+        margin-bottom: 100px;
         flex-wrap: wrap;
     }
     .papan{
@@ -57,7 +58,7 @@ main{
         margin-top: 20px;
     }
 }
-@media screen and (max-width:562px){
+@media screen and (max-width:676px){
     .iklans{
         flex-direction: column;
     }

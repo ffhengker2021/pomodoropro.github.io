@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+body{
+    position: relative;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+#utama{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: linear-gradient(140deg, #6CDCFF,#CC00FF);
+    padding: 20px;
+}
+nav{
+    width: 100%;
+    display: flex;
+    /* background-color: red; */
+    justify-content: space-between;
+    align-items: center;
+}
+#home{
+    padding: 10px 15px;
+}
+#home, ul li a{color: #fff;font-size: 22px; text-decoration: none;}
+ul{
+    display: flex;
+}
+li a , li{
+    list-style: none;
+    padding: 10px 15px;
+    transition: color .3s;
+    text-decoration: none;
+}
+main{
+    min-height: 65vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    position: relative;
+    top: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    max-width: 700px;
+}
+.timer{
+    display: flex;
+    width: 480px;
+    align-items: center;
+    justify-content: space-around;
+    height: 120px;
+    color: white;
+}
+.menit , .detik{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 220px;
+    height: 100px;
+}
+#menit1 , #menit2 , #detik1 , #detik2{
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 54px;
+    font-family: 'awe',sans-serif;
+    width: 100px;
+    height: 100px;
+    justify-content: center;
+    background-color: rgba(128, 0, 128, 0.541);
+}
+.tombol{
+    width: 200px;
+    top: 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+.tombol , .mulai{transition: .2s;}
+.mulai{
+    height: 50px;
+    width: 150px;
+    background-color: #fff;
+    border-radius: 10px;
+    outline: none;
+    box-shadow: 0 8px #002affb6;
+    font-size: 22px;
+    border: none;
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    background-color: #fff;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 18px;
+    background: linear-gradient(140deg,rgba(255,255,255,.3),rgba(255,255,255,.35));
+    width: 100%;
+}
+li a:hover{
+    color: #000;
+}
+.mulai:active , .tombol:active{
+    top: 38px;
+    box-shadow: none;
+}
+@font-face{
+    font-family: 'awe';
+    src: url('../file/DS-DIGIT.TTF');
+}
+@media screen and (max-width : 460px){
+    .timer{
+        width: 350px;
+    }
+    #detik1 , #menit1 , #detik2 , #menit2{font-size: 42px;}
+    .menit , .detik{
+        width: 150px;
+    }
+    #detik1 , #menit1 , #detik2 , #menit2{
+        width: 70px;
+        height: 70px;
+    }
+}
+@media screen and (max-width : 400px){
+    #detik1 , #menit1 , #detik2 , #menit2{font-size: 38px;}
+    nav,ul{
+        flex-direction: column;
+        align-items: center;
+    }
+    nav{min-height: 10vh;}
+    ul li{padding: 0;position: relative;}
+    ul li:last-child{top: -5px;}
+    ul{margin-top: -5px;}
+    main{min-height: 45vh;}
+    .tombol{max-width: 350px;top: 0;}
+}
