@@ -93,6 +93,30 @@ if(timerJ == 0){
 }else if(timerJ <= 24){
     jam1.innerHTML = "2";
     jam2.innerHTML = timerJ-20;
+}else if(timerJ <= 39){
+    jam1.innerHTML = "3";
+    jam2.innerHTML = timerJ-30;
+}else if(timerJ <= 49){
+    jam1.innerHTML = "4";
+    jam2.innerHTML = timerJ-40;
+}else if(timerJ <= 59){
+    jam1.innerHTML = "5";
+    jam2.innerHTML = timerJ-50;
+}else if(timerJ <= 69){
+    jam1.innerHTML = "6";
+    jam2.innerHTML = timerJ-60;
+}else if(timerJ <= 79){
+    jam1.innerHTML = "7";
+    jam2.innerHTML = timerJ-70;
+}else if(timerJ <= 89){
+    jam1.innerHTML = "8";
+    jam2.innerHTML = timerJ-80;
+}else if(timerJ <= 99){
+    jam1.innerHTML = "9";
+    jam2.innerHTML = timerJ-90;
+}else if(timerJ > 99){
+    timerJ = 0;
+    jam1.innerHTML = "0";jam2.innerHTML = "0";
 }else{
     jam1.innerHTML = "0";jam.innerHTML = "0";
 }
@@ -237,9 +261,33 @@ function masukan(){
     }else if(timerJ <= 19){
         jam1.innerHTML = "1";
         jam2.innerHTML = timerJ-10;
-    }else if(timerJ <= 24){
+    }else if(timerJ <= 29){
         jam1.innerHTML = "2";
         jam2.innerHTML = timerJ-20;
+    }else if(timerJ <= 39){
+        jam1.innerHTML = "3";
+        jam2.innerHTML = timerJ-30;
+    }else if(timerJ <= 49){
+        jam1.innerHTML = "4";
+        jam2.innerHTML = timerJ-40;
+    }else if(timerJ <= 59){
+        jam1.innerHTML = "5";
+        jam2.innerHTML = timerJ-50;
+    }else if(timerJ <= 69){
+        jam1.innerHTML = "6";
+        jam2.innerHTML = timerJ-60;
+    }else if(timerJ <= 79){
+        jam1.innerHTML = "7";
+        jam2.innerHTML = timerJ-70;
+    }else if(timerJ <= 89){
+        jam1.innerHTML = "8";
+        jam2.innerHTML = timerJ-80;
+    }else if(timerJ <= 99){
+        jam1.innerHTML = "9";
+        jam2.innerHTML = timerJ-90;
+    }else if(timerJ > 99){
+        timerJ = 0;
+        jam1.innerHTML = "0";jam2.innerHTML = "0";
     }else{
         jam1.innerHTML = "0";jam2.innerHTML = "0";
     }
@@ -251,6 +299,11 @@ function reset(){
         timerJ = 0;
         timerD = 0;
         timerM = 0;
+
+        timerJ = document.getElementById('InputJam').value = 0;
+        timerM = document.getElementById('InputMenit').value = 0;
+        timerD = document.getElementById('InputDetik').value = 0;
+
         if(timerD == 0){
             detik1.innerHTML = timerD;
             detik2.innerHTML = timerD;
@@ -429,6 +482,30 @@ function timer(){
     }else if(timerJ <= 24){
         jam1.innerHTML = "2";
         jam2.innerHTML = timerJ-20;
+    }else if(timerJ <= 39){
+        jam1.innerHTML = "3";
+        jam2.innerHTML = timerJ-30;
+    }else if(timerJ <= 49){
+        jam1.innerHTML = "4";
+        jam2.innerHTML = timerJ-40;
+    }else if(timerJ <= 59){
+        jam1.innerHTML = "5";
+        jam2.innerHTML = timerJ-50;
+    }else if(timerJ <= 69){
+        jam1.innerHTML = "6";
+        jam2.innerHTML = timerJ-60;
+    }else if(timerJ <= 79){
+        jam1.innerHTML = "7";
+        jam2.innerHTML = timerJ-70;
+    }else if(timerJ <= 89){
+        jam1.innerHTML = "8";
+        jam2.innerHTML = timerJ-80;
+    }else if(timerJ <= 99){
+        jam1.innerHTML = "9";
+        jam2.innerHTML = timerJ-90;
+    }else if(timerJ > 99){
+        timerJ = 0;
+        jam1.innerHTML = "0";jam2.innerHTML = "0";
     }else{
         jam1.innerHTML = "0";timerJ.innerHTML = "0";
     }
@@ -440,7 +517,7 @@ function alarm(){
     let suara = `<source src="../file/Google_Event-1.mp3"`
     document.getElementById('music').innerHTML = `<audio autoplay="autoplay" loop> ${suara} </audio>`
 
-    let con = confirm('Time Is OVer');
+    let con = confirm('Time Is Over');
     if(con == true){
         document.getElementById('music').innerHTML = ``
     }
