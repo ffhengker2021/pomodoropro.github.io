@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style/gaya.css">
-    <title>Pomodoropro | Time</title>
+    <link rel="shorcutt icon" href="img/Untitled design(1).png">
+    <title>Pomodoropro | Timer</title>
 </head>
 <body>
     <section id="utama">
@@ -55,9 +56,16 @@
     <div id="music"></div>
     </aside>
     </section>
+    <footer>
+        <span>Copyright Pomodoropro <sup>&copy;</sup> <span id="copy"></span></span>
+    </footer>
     <!-- <section class="kedua"></section> -->
 
     <script src="/script/script.js"></script>
+    <script>
+        let tahun = document.getElementById('copy');
+        tahun.innerHTML = new Date().getFullYear();
+    </script>
 
 </body>
 </html>

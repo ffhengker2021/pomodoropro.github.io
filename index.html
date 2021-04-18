@@ -59,9 +59,13 @@
             </div>
         </section>
     </section>
+    <footer>
+        <span>Copyright Pomodoropro <sup>&copy;</sup> <span id="copy"></span></span>
+    </footer>
 
     <script>
-        
+        let tahun = document.getElementById('copy');
+        tahun.innerHTML = new Date().getFullYear();
         
         
         let jam1 = document.getElementById('jam1')

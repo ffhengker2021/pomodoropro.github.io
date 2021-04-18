@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Untitled design(1).png">
+    <link rel="stylesheet" type="text/css" href="style/pomodoropro.css">
+    <title>Pomodoropro | Pomodoro Timer</title>
+</head>
+<body>
+    <section id="utama">
+        <nav>
+            <a href="index.html" id="home"><span>Home</span></a>
+            <ul>
+                <li><a href="timer.html">Timer</a></li>
+                <li><a href="pomodoro.html">Pomodoro</a></li>
+            </ul>
+        </nav>
+        <main id="container">
+            <div class="container">
+                <div class="timer">
+                    <div class="menit">
+                        <div id="menit1"></div>
+                        <div id="menit2"></div>
+                    </div>
+                    <div class="detik">
+                        <div id="detik1"></div>
+                        <div id="detik2"></div>
+                    </div>
+                </div>
+            <div class="tombol">
+                <button class="mulai" onclick="mulai()" id="tombol">Start</button>
+            </div>
+            </div>
+            <div id="music"></div>
+        </main>
+    </section>
+    <footer>
+        <span>Copyright Pomodoropro <sup>&copy;</sup> <span id="copy"></span></span>
+    </footer>
+
+    <script>
+        let menit1 = document.getElementById("menit1");
+        let menit2 = document.getElementById("menit2");
+        let detik1 = document.getElementById("detik1");
+        let detik2 = document.getElementById("detik2");
+        let tombol = document.getElementById('tombol');
+
+        menit1.innerHTML = '2'
+        menit2.innerHTML = '5'
+        detik1.innerHTML = '0'
+        detik2.innerHTML = '0'
+
+        let tes = false;
+        
+        let Menit = 0;
+        let Detik = 3;
+
+        let maju
+        function mulai(){
+            if(tes == false){
+                tes = true
+                tombol.innerHTML = 'Pause'
+                maju  = setInterval(waktu,1000);
+            }else if(tes == true){
+                tes = false;
+                tombol.innerHTML = 'Start'
+                clearInterval(maju)
+            }
+        }
+
+
+        function waktu(){
+            if(Detik <= 9){
+                detik1.innerHTML = '0'
+                detik2.innerHTML = Detik;
+            }else if(Detik <= 19){
+                detik1.innerHTML = '1'
+                detik2.innerHTML = Detik-10;
+            }else if(Detik <= 29){
+                detik1.innerHTML = '2'
+                detik2.innerHTML = Detik-20;
+            }else if(Detik <= 39){
+                detik1.innerHTML = '3'
+                detik2.innerHTML = Detik-30;
+            }else if(Detik <= 49){
+                detik1.innerHTML = '4'
+                detik2.innerHTML = Detik-40;
+            }else if(Detik <= 59){
+                detik1.innerHTML = '5'
+                detik2.innerHTML = Detik-50;
+            }
+
+            if(Menit <= 9){
+                menit1.innerHTML = '0';
+                menit2.innerHTML = Menit;
+            }else if(Menit <= 19){
+                menit1.innerHTML = '1';
+                menit2.innerHTML = Menit-10;
+            }else if(Menit <= 29){
+                menit1.innerHTML = '2';
+                menit2.innerHTML = Menit-20;
+            }
+
+            if(Menit == 0){
+                if(Detik > 0){
+                    Detik--;
+                }else{
+                    tes = false;
+                    tombol.innerHTML = 'Start';
+                    alarm()
+                    clearInterval(maju);
+                }
+            }else{
+                if(Detik > 0){
+                    Detik--;
+                }else{
+                    Menit--;
+                    Detik = 59;
+                }
+            }
+
+        }
+
+        function alarm(){
+        let suara = `<source src="../file/Google_Event-1.mp3"`
+        document.getElementById('music').innerHTML = `<audio autoplay="autoplay" loop> ${suara} </audio>`
+
+        let con = confirm('Time Is Over');
+        if(con == true){
+            document.getElementById('music').innerHTML = ``
+        }
+        }
+
+        let tahun = document.getElementById('copy');
+        tahun.innerHTML = new Date().getFullYear();
+        
+    </script>
+
+</body>
+</html>
