@@ -54,8 +54,8 @@
 
         let tes = false;
         
-        let Menit = 0;
-        let Detik = 3;
+        let Menit = 25;
+        let Detik = 0;
 
         let maju
         function mulai(){
@@ -130,6 +130,12 @@
         let con = confirm('Time Is Over');
         if(con == true){
             document.getElementById('music').innerHTML = ``
+            Menit = 25;
+            Detik = 0;
+            menit1.innerHTML = '2'
+            menit2.innerHTML = '5'
+            detik1.innerHTML = '0'
+            detik2.innerHTML = '0'
         }
         }
 
