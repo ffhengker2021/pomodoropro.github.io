@@ -10,10 +10,12 @@ span{
     color: white;
 }
 main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     max-width: 100vw ;
     height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
     background: linear-gradient(116.82deg, rgba(133, 33, 232, 0.801) 0.49%, rgba(255, 56, 92, 0.72) 100%, rgba(255, 56, 92, 0.72) 100%);
 }
@@ -53,13 +55,13 @@ main{
 }
 .link{
     width: 40%;
-    background: rgba(255, 255, 255, 0.55);
+    background: rgba(255, 255, 255, 0.45);
     text-align: center;
     cursor: pointer;
     padding: 10px 0;
 }
 .link a{
-    color: #D031EA;
+    color: #ad28c2;
     font-size: 18px;
     text-decoration: none;
     transition: .3s;
@@ -67,6 +69,11 @@ main{
 .link:hover a{
     color: #ff0080;
 }
+/* #copyright{
+    position: relative;
+    top: 20px;
+} */
+
 
 @media screen and (max-width : 1300px){
     .link{
@@ -74,6 +81,9 @@ main{
     }
 }
 @media screen and (max-width : 750px){
+    .pop{
+        width:80%;
+    }
     .pop , .link{border-radius: 5px;}
     .user #id{
         font-size: 24px;
@@ -83,6 +93,7 @@ main{
     }
     .link{
         width: 60%;
+        border-radius: 5px;
         padding: 10px 0;
     }
     .link a{
